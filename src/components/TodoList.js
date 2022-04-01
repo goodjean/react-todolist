@@ -1,9 +1,12 @@
 import TodoListItem from "./TodoListItem";
+import styled from "styled-components";
+
+const TodoListBox = styled.div``;
 
 function TodoList({ todolist, setTodolist }) {
   return (
     // todolist가 없으면 할일 없음 render
-    <div>
+    <TodoListBox>
       {todolist.length > 0 ? (
         <ul>
           {todolist.map((todo) => (
@@ -18,7 +21,7 @@ function TodoList({ todolist, setTodolist }) {
       ) : (
         "할 일 없음"
       )}
-    </div>
+    </TodoListBox>
   );
 }
 
