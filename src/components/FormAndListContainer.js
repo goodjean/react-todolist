@@ -14,6 +14,7 @@ const FormListContainerBox = styled.div`
     padding-right: 22px;
     border-top: 1px solid white;
     border-bottom: 1px solid white;
+    background-color: #ffc8cd;
   }
 `;
 

@@ -5,6 +5,30 @@ import {
   GrFormCheckmark,
   GrFormTrash,
 } from "react-icons/gr";
+import styled from "styled-components";
+
+const TodoListItemBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin-left: 0;
+  margin-right: 40px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 2px;
+
+  background-color: #ffdfdc;
+`;
+
+const EditBtn = styled.div``;
+
+const TrashBtn = styled.div``;
+
+const CheckBtn = styled.div``;
+
+const CloseBtn = styled.div``;
 
 function TodoListItem({ todo, todolist, setTodolist }) {
   const [newTodo, setNewTodo] = useState(todo.text);
@@ -38,7 +62,7 @@ function TodoListItem({ todo, todolist, setTodolist }) {
 
   return (
     // state가 true면 수정창 띄우고 아니면 state랑 수정삭제버튼 렌더
-    <div>
+    <TodoListItemBox>
       {state ? (
         <>
           <input
@@ -48,25 +72,27 @@ function TodoListItem({ todo, todolist, setTodolist }) {
               setNewTodo(target.value);
             }}
           ></input>
-          <div onClick={() => modify()}>
+
+          <CheckBtn onClick={() => modify()}>
             <GrFormCheckmark />
-          </div>
-          <div onClick={() => modifyCancel()}>
+          </CheckBtn>
+
+          <CloseBtn onClick={() => modifyCancel()}>
             <GrFormClose />
-          </div>
+          </CloseBtn>
         </>
       ) : (
         <>
           <div>{todo.text}</div>
-          <div onClick={() => setState(true)}>
+          <EditBtn onClick={() => setState(true)}>
             <GrFormEdit />
-          </div>
-          <div onClick={() => btnDelete(todo.id)}>
+          </EditBtn>
+          <TrashBtn onClick={() => btnDelete(todo.id)}>
             <GrFormTrash />
-          </div>
+          </TrashBtn>
         </>
       )}
-    </div>
+    </TodoListItemBox>
   );
 }
 

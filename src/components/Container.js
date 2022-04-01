@@ -6,7 +6,7 @@ const ContainerBox = styled.div`
   height: 500px;
   position: relative;
   border-radius: 16px;
-  box-shadow: 0 0 8px #803232;
+  box-shadow: 0 0 8px #853c3c;
 
   margin: 0 auto;
   margin-top: 96px;

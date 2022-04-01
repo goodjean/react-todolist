@@ -2,8 +2,8 @@ import TodoListItem from "./TodoListItem";
 import styled from "styled-components";
 
 const TodoListBox = styled.div`
-  padding-left: 22px;
-  padding-right: 22px;
+  padding-left: 10px;
+  padding-right: 10px;
 `;
 
 function TodoList({ todolist, setTodolist }) {
