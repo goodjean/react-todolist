@@ -2,6 +2,7 @@ import TodoListItem from "./TodoListItem";
 
 function TodoList({ todolist, setTodolist }) {
   return (
+    // todolist가 없으면 할일 없음 render
     <div>
       {todolist.length > 0 ? (
         <ul>

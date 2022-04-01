@@ -1,12 +1,15 @@
 import { useState } from "react";
 
+// todo의 id값
 let index = 0;
 
 function TodoForm({ setTodolist }) {
   const [todo, setTodo] = useState("");
+
   const onChange = (e) => {
     setTodo(e.target.value);
   };
+
   const onSubmit = (e) => {
     e.preventDefault();
 
