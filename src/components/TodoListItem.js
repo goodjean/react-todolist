@@ -1,4 +1,10 @@
 import { useState } from "react";
+import {
+  GrFormEdit,
+  GrFormClose,
+  GrFormCheckmark,
+  GrFormTrash,
+} from "react-icons/gr";
 
 function TodoListItem({ todo, todolist, setTodolist }) {
   const [newTodo, setNewTodo] = useState(todo.text);
@@ -42,14 +48,22 @@ function TodoListItem({ todo, todolist, setTodolist }) {
               setNewTodo(target.value);
             }}
           ></input>
-          <button onClick={() => modify()}>수정확인</button>
-          <button onClick={() => modifyCancel()}>수정취소</button>
+          <div onClick={() => modify()}>
+            <GrFormCheckmark />
+          </div>
+          <div onClick={() => modifyCancel()}>
+            <GrFormClose />
+          </div>
         </>
       ) : (
         <>
           <div>{todo.text}</div>
-          <button onClick={() => setState(true)}>수정</button>
-          <button onClick={() => btnDelete(todo.id)}>삭제</button>
+          <div onClick={() => setState(true)}>
+            <GrFormEdit />
+          </div>
+          <div onClick={() => btnDelete(todo.id)}>
+            <GrFormTrash />
+          </div>
         </>
       )}
     </div>

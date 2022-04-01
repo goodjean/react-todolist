@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const ContainerBox = styled.div`
-  background-color: pink;
+  background-color: #ffc8cd;
   width: 400px;
   height: 500px;
   position: relative;

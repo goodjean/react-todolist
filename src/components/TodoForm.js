@@ -1,12 +1,12 @@
 import { useState } from "react";
 import styled from "styled-components";
+import { GrAdd } from "react-icons/gr";
 
 const TodoFormBox = styled.form`
-  background-color: white;
+  background-color: pink;
   flex: 1;
   padding: 20px 32px;
   padding-bottom: 20px;
-  overflow-y: auto;
   text-align: center;
 `;
 
@@ -41,8 +41,11 @@ function TodoForm({ todolist, setTodolist }) {
         value={todo}
         onChange={onChange}
         size="35"
+        maxLength="18"
       />
-      <button>Add</button>
+      <div>
+        <GrAdd />
+      </div>
     </TodoFormBox>
   );
 }
