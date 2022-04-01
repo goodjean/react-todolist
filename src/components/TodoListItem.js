@@ -6,8 +6,18 @@ function TodoListItem({ todo, todolist, setTodolist }) {
   const btnDelete = (key) => {
     setTodolist(todolist.filter((todo) => todo.id !== key));
   };
-
-  const modify = () => {};
+  const btnChange = (key, newTodo) => {
+    setTodolist(
+      todolist.map((todo) => ({
+        ...todo,
+        text: todo.id === key ? newTodo : todo.text,
+      }))
+    );
+  };
+  const modify = () => {
+    btnChange(todo.id, newTodo);
+    setState(false);
+  };
   const modifyCancel = () => {
     setState(false);
   };
