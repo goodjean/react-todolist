@@ -1,5 +1,7 @@
 import Date from "./Date";
 import styled from "styled-components";
+
+//Header(제목, 날짜) div
 const HeaderBox = styled.div`
   padding-top: 16px;
   padding-bottom: 16px;

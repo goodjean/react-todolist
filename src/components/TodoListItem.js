@@ -11,24 +11,62 @@ const TodoListItemBox = styled.div`
   display: flex;
   flex-direction: row;
   margin-left: 0;
-  margin-right: 40px;
+  margin-right: 65px;
   margin-bottom: 10px;
   margin-top: 10px;
 
   padding-top: 5px;
   padding-bottom: 5px;
-  padding-left: 2px;
+  padding-left: 6px;
 
   background-color: #ffdfdc;
+  input {
+    width: 255px;
+    height: 18px;
+    border: 1px solid white;
+    border-radius: 3px;
+    &:focus {
+      outline: none;
+      border-color: #aa1eaa;
+    }
+
+    font-family: "Pangolin", sans-serif;
+  }
 `;
 
-const EditBtn = styled.div``;
+const EditBtnBox = styled.div`
+  position: absolute;
+  right: 50px;
+  margin: 0;
+  height: 25px;
+  font-size: 22px;
+`;
 
-const TrashBtn = styled.div``;
+const TrashBtnBox = styled.div`
+  position: absolute;
+  right: 20px;
+  margin: 0;
+  height: 24px;
+  font-size: 22px;
+`;
 
-const CheckBtn = styled.div``;
+const CheckBtnBox = styled.div`
+  position: absolute;
+  right: 50px;
+  margin: 0;
+  height: 25px;
+  font-size: 22px;
+  border-bottom: 2px solid #64cd3c;
+`;
 
-const CloseBtn = styled.div``;
+const CloseBtnBox = styled.div`
+  position: absolute;
+  right: 20px;
+  margin: 0;
+  height: 24px;
+  font-size: 22px;
+  border-bottom: 2px solid #cd1039;
+`;
 
 function TodoListItem({ todo, todolist, setTodolist }) {
   const [newTodo, setNewTodo] = useState(todo.text);
@@ -67,29 +105,30 @@ function TodoListItem({ todo, todolist, setTodolist }) {
         <>
           <input
             type="text"
+            maxLength="18"
             value={newTodo}
             onChange={({ target }) => {
               setNewTodo(target.value);
             }}
           ></input>
 
-          <CheckBtn onClick={() => modify()}>
+          <CheckBtnBox onClick={() => modify()}>
             <GrFormCheckmark />
-          </CheckBtn>
+          </CheckBtnBox>
 
-          <CloseBtn onClick={() => modifyCancel()}>
+          <CloseBtnBox onClick={() => modifyCancel()}>
             <GrFormClose />
-          </CloseBtn>
+          </CloseBtnBox>
         </>
       ) : (
         <>
           <div>{todo.text}</div>
-          <EditBtn onClick={() => setState(true)}>
+          <EditBtnBox onClick={() => setState(true)}>
             <GrFormEdit />
-          </EditBtn>
-          <TrashBtn onClick={() => btnDelete(todo.id)}>
+          </EditBtnBox>
+          <TrashBtnBox onClick={() => btnDelete(todo.id)}>
             <GrFormTrash />
-          </TrashBtn>
+          </TrashBtnBox>
         </>
       )}
     </TodoListItemBox>

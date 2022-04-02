@@ -12,6 +12,8 @@ const DateBox = styled.div`
     margin-top: 6px;
     color: #fff0f0;
     font-weight: bold;
+    font-family: "Indie Flower", cursive;
+    font-family: "Poor Story", cursive;
   }
 `;
 

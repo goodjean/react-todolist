@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 const ContainerBox = styled.div`
+  @import url("https://fonts.googleapis.com/css2?family=Pangolin&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Poor+Story&display=swap");
   background-color: #ffc8cd;
   width: 400px;
   height: 500px;
@@ -14,6 +16,8 @@ const ContainerBox = styled.div`
 
   display: flex;
   flex-direction: column;
+
+  font-family: "Pangolin", sans-serif;
 `;
 
 // presentation container

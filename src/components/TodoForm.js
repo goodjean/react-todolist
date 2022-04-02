@@ -9,9 +9,17 @@ const TodoFormBox = styled.form`
   padding: 20px 77px 20px 72px;
   text-align: center;
 
+  input {
+    font-family: "Pangolin", sans-serif;
+
+    &:hover {
+      outline: none;
+      border: 1px solid #aa1eaa;
+    }
+  }
+
   .addBtn {
     padding: 2px 3px 1px 3px;
-    cursor: pointer;
   }
 `;
 
@@ -42,7 +50,7 @@ function TodoForm({ todolist, setTodolist }) {
     <TodoFormBox onSubmit={onSubmit}>
       <input
         type="text"
-        placeholder="할 일을 입력해주세요"
+        placeholder="input today's todo"
         value={todo}
         onChange={onChange}
         size="35"
