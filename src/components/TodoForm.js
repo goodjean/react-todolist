@@ -10,8 +10,10 @@ const TodoFormBox = styled.form`
   text-align: center;
 
   input {
+    background-color: #fff0f5;
     font-family: "Pangolin", sans-serif;
-
+    border: 1px solid white;
+    border-radius: 3px;
     &:hover {
       outline: none;
       border: 1px solid #aa1eaa;
@@ -42,7 +44,10 @@ function TodoForm({ todolist, setTodolist }) {
     if (todolist.length > 5) {
       return;
     }
-    setTodolist((todos) => [...todos, { text: todo, id: index }]);
+    setTodolist((todos) => [
+      ...todos,
+      { text: todo, id: index, checked: false },
+    ]);
     setTodo("");
     index++;
   };

@@ -6,6 +6,7 @@ import {
   GrFormTrash,
 } from "react-icons/gr";
 import styled from "styled-components";
+import Done from "./Done";
 
 const TodoListItemBox = styled.div`
   display: flex;
@@ -97,7 +98,13 @@ function TodoListItem({ todo, todolist, setTodolist }) {
   const modifyCancel = () => {
     setState(false);
   };
-
+  const onCheck = (key) => {
+    setTodolist(
+      todolist.map((todo) =>
+        todo.id === key ? { ...todo, checked: !todo.checked } : todo
+      )
+    );
+  };
   return (
     // state가 true면 수정창 띄우고 아니면 state랑 수정삭제버튼 렌더
     <TodoListItemBox>
@@ -122,7 +129,8 @@ function TodoListItem({ todo, todolist, setTodolist }) {
         </>
       ) : (
         <>
-          <div>{todo.text}</div>
+          <Done onCheck={onCheck} todo={todo} />
+
           <EditBtnBox onClick={() => setState(true)}>
             <GrFormEdit />
           </EditBtnBox>
