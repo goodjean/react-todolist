@@ -129,7 +129,7 @@ function TodoListItem({ todo, todolist, setTodolist }) {
         </>
       ) : (
         <>
-          <Done onCheck={onCheck} todo={todo} />
+          <Done onCheck={onCheck} todo={todo} todolist={todolist} />
 
           <EditBtnBox onClick={() => setState(true)}>
             <GrFormEdit />

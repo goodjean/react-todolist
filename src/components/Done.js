@@ -19,7 +19,7 @@ const InCompletedBox = styled.div`
   color: #cd3861;
 `;
 
-function Done({ todo, onCheck }) {
+function Done({ todo, onCheck, todolist }) {
   return (
     <>
       <div onClick={() => onCheck(todo.id)}>

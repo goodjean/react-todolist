@@ -23,10 +23,12 @@ const FormListContainerBox = styled.div`
 //Form 과 List 의 부모 컴포넌트
 function FormAndListContainer() {
   const [todolist, setTodolist] = useState([]);
-
+  const checkCount = todolist.filter((todo) => todo.checked === true);
   return (
     <FormListContainerBox>
-      <div className="restTodo">할 일 ({todolist.length})개 남음 ⭐️</div>
+      <div className="restTodo">
+        할 일 ({todolist.length - checkCount.length})개 남음 ⭐️
+      </div>
       <TodoForm setTodolist={setTodolist} todolist={todolist} />
       <TodoList todolist={todolist} setTodolist={setTodolist} />
     </FormListContainerBox>
